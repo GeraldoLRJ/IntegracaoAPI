@@ -1,0 +1,728 @@
+{
+    "dividas_calculadas": {
+        "cliente": {
+            "ass_cod": "56",
+            "cli_cod": "7522666",
+            "cli_emp": "1",
+            "cli_nom": "KATIANE DA SILVA",
+            "cli_tip_doc": "CPF",
+            "cli_cpf": "12345678909",
+            "cli_ema": "katia.da.silva.fake@gmail.com",
+            "cli_dat_nas": "04/09/2001",
+            "telefones": {
+                "tel_res": "",
+                "tel_com": "",
+                "tel_cel": "41999887766"
+            },
+            "enderecos": {
+                "endereco_residencial": {
+                    "end_res": "DOM PEDRO",
+                    "num_res": "70",
+                    "com_res": "89",
+                    "bai_res": "CENTRO",
+                    "cid_res": "PEDRO OSORIO",
+                    "uf_res": "RS",
+                    "cep_res": "96360000",
+                    "ref_res": ""
+                },
+                "endereco_preferencial": {
+                    "end_pre": "",
+                    "bai_pre": "",
+                    "cid_pre": "",
+                    "uf_pre": "",
+                    "cep_pre": ""
+                }
+            }
+        },
+        "produtos": {
+            "produto": [
+                {
+                    "pro_nom": "mb",
+                    "formasNegociacao": {
+                        "forma_negociacao": [
+                            {
+                                "for_cod": "432",
+                                "for_nom": "BW - FEIRÃO | A VISTA MB",
+                                "parcelas": {
+                                    "parcela": [
+                                        {
+                                            "cli_cod": "7522666",
+                                            "cli_emp": "1",
+                                            "con_cod": "246061",
+                                            "con_fil": "0",
+                                            "con_fra": "13757",
+                                            "par_cod": "136223548",
+                                            "par_num": "1",
+                                            "par_ven": "06/10/2021",
+                                            "par_obr": "2",
+                                            "par_sel": "0",
+                                            "par_val": "103,08",
+                                            "par_sit": "Acordo",
+                                            "par_sta": "AC",
+                                            "par_datret": "2026-02-14",
+                                            "par_acocod": "10039160",
+                                            "lancamentos": {
+                                                "item": [
+                                                    {
+                                                        "codigo": "1",
+                                                        "descricao": "PRINCIPAL",
+                                                        "tipo": "C",
+                                                        "valor": "103,08",
+                                                        "maximo_desconto": "95,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1001",
+                                                        "descricao": "JUROS",
+                                                        "tipo": "E",
+                                                        "valor": "344,80",
+                                                        "maximo_desconto": "100,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1002",
+                                                        "descricao": "MULTA",
+                                                        "tipo": "E",
+                                                        "valor": "2,06",
+                                                        "maximo_desconto": "100,00"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "cli_cod": "7522666",
+                                            "cli_emp": "1",
+                                            "con_cod": "246061",
+                                            "con_fil": "0",
+                                            "con_fra": "13757",
+                                            "par_cod": "136223549",
+                                            "par_num": "1",
+                                            "par_ven": "05/11/2021",
+                                            "par_obr": "2",
+                                            "par_sel": "0",
+                                            "par_val": "103,08",
+                                            "par_sit": "Acordo",
+                                            "par_sta": "AC",
+                                            "par_datret": "2026-02-14",
+                                            "par_acocod": "10039160",
+                                            "lancamentos": {
+                                                "item": [
+                                                    {
+                                                        "codigo": "1",
+                                                        "descricao": "PRINCIPAL",
+                                                        "tipo": "C",
+                                                        "valor": "103,08",
+                                                        "maximo_desconto": "95,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1001",
+                                                        "descricao": "JUROS",
+                                                        "tipo": "E",
+                                                        "valor": "335,53",
+                                                        "maximo_desconto": "100,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1002",
+                                                        "descricao": "MULTA",
+                                                        "tipo": "E",
+                                                        "valor": "2,06",
+                                                        "maximo_desconto": "100,00"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                "regras_acordo": {
+                                    "regra_acordo": {
+                                        "aco_regcod": "7255",
+                                        "aco_regsel": "S",
+                                        "aco_regnom": "ACORDO - BW - FEIRÃO | A VISTA MB",
+                                        "aco_exient": "N",
+                                        "aco_minnumpar": "1",
+                                        "aco_maxnumpar": "1",
+                                        "aco_datentsug": "25/10/2024",
+                                        "aco_datentmin": "25/10/2024",
+                                        "aco_datentmax": "04/11/2024",
+                                        "aco_diamaxpriven": "10",
+                                        "aco_valentsug": "0,00",
+                                        "aco_valentmin": "0,00",
+                                        "aco_perentmin": "0,00",
+                                        "aco_valparmin": "0,00",
+                                        "aco_perjur": "0,00",
+                                        "aco_valjur": "0,00"
+                                    }
+                                }
+                            },
+                            {
+                                "for_cod": "433",
+                                "for_nom": "BW - FEIRÃO | 2X A 4X MB",
+                                "parcelas": {
+                                    "parcela": [
+                                        {
+                                            "cli_cod": "7522666",
+                                            "cli_emp": "1",
+                                            "con_cod": "246061",
+                                            "con_fil": "0",
+                                            "con_fra": "13757",
+                                            "par_cod": "136223548",
+                                            "par_num": "1",
+                                            "par_ven": "06/10/2021",
+                                            "par_obr": "2",
+                                            "par_sel": "0",
+                                            "par_val": "103,08",
+                                            "par_sit": "Acordo",
+                                            "par_sta": "AC",
+                                            "par_datret": "2026-02-14",
+                                            "par_acocod": "10039160",
+                                            "lancamentos": {
+                                                "item": [
+                                                    {
+                                                        "codigo": "1",
+                                                        "descricao": "PRINCIPAL",
+                                                        "tipo": "C",
+                                                        "valor": "103,08",
+                                                        "maximo_desconto": "85,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1001",
+                                                        "descricao": "JUROS",
+                                                        "tipo": "E",
+                                                        "valor": "344,80",
+                                                        "maximo_desconto": "100,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1002",
+                                                        "descricao": "MULTA",
+                                                        "tipo": "E",
+                                                        "valor": "2,06",
+                                                        "maximo_desconto": "100,00"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "cli_cod": "7522666",
+                                            "cli_emp": "1",
+                                            "con_cod": "246061",
+                                            "con_fil": "0",
+                                            "con_fra": "13757",
+                                            "par_cod": "136223549",
+                                            "par_num": "1",
+                                            "par_ven": "05/11/2021",
+                                            "par_obr": "2",
+                                            "par_sel": "0",
+                                            "par_val": "103,08",
+                                            "par_sit": "Acordo",
+                                            "par_sta": "AC",
+                                            "par_datret": "2026-02-14",
+                                            "par_acocod": "10039160",
+                                            "lancamentos": {
+                                                "item": [
+                                                    {
+                                                        "codigo": "1",
+                                                        "descricao": "PRINCIPAL",
+                                                        "tipo": "C",
+                                                        "valor": "103,08",
+                                                        "maximo_desconto": "85,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1001",
+                                                        "descricao": "JUROS",
+                                                        "tipo": "E",
+                                                        "valor": "335,53",
+                                                        "maximo_desconto": "100,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1002",
+                                                        "descricao": "MULTA",
+                                                        "tipo": "E",
+                                                        "valor": "2,06",
+                                                        "maximo_desconto": "100,00"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                "regras_acordo": {
+                                    "regra_acordo": {
+                                        "aco_regcod": "7256",
+                                        "aco_regsel": "S",
+                                        "aco_regnom": "ACORDO - BW - FEIRÃO | 2X A 4X MB",
+                                        "aco_exient": "N",
+                                        "aco_minnumpar": "2",
+                                        "aco_maxnumpar": "4",
+                                        "aco_datentsug": "25/10/2024",
+                                        "aco_datentmin": "25/10/2024",
+                                        "aco_datentmax": "04/11/2024",
+                                        "aco_diamaxpriven": "30",
+                                        "aco_valentsug": "0,00",
+                                        "aco_valentmin": "0,00",
+                                        "aco_perentmin": "0,00",
+                                        "aco_valparmin": "50,00",
+                                        "aco_perjur": "0,00",
+                                        "aco_valjur": "0,00"
+                                    }
+                                }
+                            },
+                            {
+                                "for_cod": "434",
+                                "for_nom": "BW - FEIRÃO | 5X A 12X MB",
+                                "parcelas": {
+                                    "parcela": [
+                                        {
+                                            "cli_cod": "7522666",
+                                            "cli_emp": "1",
+                                            "con_cod": "246061",
+                                            "con_fil": "0",
+                                            "con_fra": "13757",
+                                            "par_cod": "136223548",
+                                            "par_num": "1",
+                                            "par_ven": "06/10/2021",
+                                            "par_obr": "2",
+                                            "par_sel": "0",
+                                            "par_val": "103,08",
+                                            "par_sit": "Acordo",
+                                            "par_sta": "AC",
+                                            "par_datret": "2026-02-14",
+                                            "par_acocod": "10039160",
+                                            "lancamentos": {
+                                                "item": [
+                                                    {
+                                                        "codigo": "1",
+                                                        "descricao": "PRINCIPAL",
+                                                        "tipo": "C",
+                                                        "valor": "103,08",
+                                                        "maximo_desconto": "55,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1001",
+                                                        "descricao": "JUROS",
+                                                        "tipo": "E",
+                                                        "valor": "344,80",
+                                                        "maximo_desconto": "100,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1002",
+                                                        "descricao": "MULTA",
+                                                        "tipo": "E",
+                                                        "valor": "2,06",
+                                                        "maximo_desconto": "100,00"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "cli_cod": "7522666",
+                                            "cli_emp": "1",
+                                            "con_cod": "246061",
+                                            "con_fil": "0",
+                                            "con_fra": "13757",
+                                            "par_cod": "136223549",
+                                            "par_num": "1",
+                                            "par_ven": "05/11/2021",
+                                            "par_obr": "2",
+                                            "par_sel": "0",
+                                            "par_val": "103,08",
+                                            "par_sit": "Acordo",
+                                            "par_sta": "AC",
+                                            "par_datret": "2026-02-14",
+                                            "par_acocod": "10039160",
+                                            "lancamentos": {
+                                                "item": [
+                                                    {
+                                                        "codigo": "1",
+                                                        "descricao": "PRINCIPAL",
+                                                        "tipo": "C",
+                                                        "valor": "103,08",
+                                                        "maximo_desconto": "55,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1001",
+                                                        "descricao": "JUROS",
+                                                        "tipo": "E",
+                                                        "valor": "335,53",
+                                                        "maximo_desconto": "100,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1002",
+                                                        "descricao": "MULTA",
+                                                        "tipo": "E",
+                                                        "valor": "2,06",
+                                                        "maximo_desconto": "100,00"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                "regras_acordo": {
+                                    "regra_acordo": {
+                                        "aco_regcod": "7257",
+                                        "aco_regsel": "S",
+                                        "aco_regnom": "ACORDO - BW - FEIRÃO | 5X A 12X MB",
+                                        "aco_exient": "N",
+                                        "aco_minnumpar": "5",
+                                        "aco_maxnumpar": "12",
+                                        "aco_datentsug": "25/10/2024",
+                                        "aco_datentmin": "25/10/2024",
+                                        "aco_datentmax": "04/11/2024",
+                                        "aco_diamaxpriven": "30",
+                                        "aco_valentsug": "0,00",
+                                        "aco_valentmin": "0,00",
+                                        "aco_perentmin": "0,00",
+                                        "aco_valparmin": "50,00",
+                                        "aco_perjur": "0,00",
+                                        "aco_valjur": "0,00"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "pro_nom": "mc",
+                    "formasNegociacao": {
+                        "forma_negociacao": [
+                            {
+                                "for_cod": "429",
+                                "for_nom": "BW - FEIRÃO | A VISTA",
+                                "parcelas": {
+                                    "parcela": [
+                                        {
+                                            "cli_cod": "7522666",
+                                            "cli_emp": "1",
+                                            "con_cod": "238761",
+                                            "con_fil": "0",
+                                            "con_fra": "13757",
+                                            "par_cod": "129907813",
+                                            "par_num": "1",
+                                            "par_ven": "08/09/2021",
+                                            "par_obr": "1",
+                                            "par_sel": "1",
+                                            "par_val": "96,22",
+                                            "par_sit": "Aberto",
+                                            "par_sta": "SM",
+                                            "par_datret": "2026-02-14",
+                                            "par_acocod": "0",
+                                            "lancamentos": {
+                                                "item": [
+                                                    {
+                                                        "codigo": "1",
+                                                        "descricao": "PRINCIPAL",
+                                                        "tipo": "C",
+                                                        "valor": "96,22",
+                                                        "maximo_desconto": "95,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1001",
+                                                        "descricao": "JUROS",
+                                                        "tipo": "E",
+                                                        "valor": "329,94",
+                                                        "maximo_desconto": "100,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1002",
+                                                        "descricao": "MULTA",
+                                                        "tipo": "E",
+                                                        "valor": "1,92",
+                                                        "maximo_desconto": "100,00"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "cli_cod": "7522666",
+                                            "cli_emp": "1",
+                                            "con_cod": "238999",
+                                            "con_fil": "0",
+                                            "con_fra": "13757",
+                                            "par_cod": "130061652",
+                                            "par_num": "1",
+                                            "par_ven": "10/09/2021",
+                                            "par_obr": "1",
+                                            "par_sel": "0",
+                                            "par_val": "82,10",
+                                            "par_sit": "Acordo",
+                                            "par_sta": "AC",
+                                            "par_datret": "2026-02-14",
+                                            "par_acocod": "10046171",
+                                            "lancamentos": {
+                                                "item": [
+                                                    {
+                                                        "codigo": "1",
+                                                        "descricao": "PRINCIPAL",
+                                                        "tipo": "C",
+                                                        "valor": "82,10",
+                                                        "maximo_desconto": "95,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1001",
+                                                        "descricao": "JUROS",
+                                                        "tipo": "E",
+                                                        "valor": "281,03",
+                                                        "maximo_desconto": "100,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1002",
+                                                        "descricao": "MULTA",
+                                                        "tipo": "E",
+                                                        "valor": "1,64",
+                                                        "maximo_desconto": "100,00"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                "regras_acordo": {
+                                    "regra_acordo": {
+                                        "aco_regcod": "7252",
+                                        "aco_regsel": "S",
+                                        "aco_regnom": "ACORDO - BW - FEIRÃO | A VISTA",
+                                        "aco_exient": "N",
+                                        "aco_minnumpar": "1",
+                                        "aco_maxnumpar": "1",
+                                        "aco_datentsug": "25/10/2024",
+                                        "aco_datentmin": "25/10/2024",
+                                        "aco_datentmax": "04/11/2024",
+                                        "aco_diamaxpriven": "10",
+                                        "aco_valentsug": "0,00",
+                                        "aco_valentmin": "0,00",
+                                        "aco_perentmin": "0,00",
+                                        "aco_valparmin": "0,00",
+                                        "aco_perjur": "0,00",
+                                        "aco_valjur": "0,00"
+                                    }
+                                }
+                            },
+                            {
+                                "for_cod": "430",
+                                "for_nom": "BW - FEIRÃO | 2X A 4X",
+                                "parcelas": {
+                                    "parcela": [
+                                        {
+                                            "cli_cod": "7522666",
+                                            "cli_emp": "1",
+                                            "con_cod": "238761",
+                                            "con_fil": "0",
+                                            "con_fra": "13757",
+                                            "par_cod": "129907813",
+                                            "par_num": "1",
+                                            "par_ven": "08/09/2021",
+                                            "par_obr": "1",
+                                            "par_sel": "1",
+                                            "par_val": "96,22",
+                                            "par_sit": "Aberto",
+                                            "par_sta": "SM",
+                                            "par_datret": "2026-02-14",
+                                            "par_acocod": "0",
+                                            "lancamentos": {
+                                                "item": [
+                                                    {
+                                                        "codigo": "1",
+                                                        "descricao": "PRINCIPAL",
+                                                        "tipo": "C",
+                                                        "valor": "96,22",
+                                                        "maximo_desconto": "85,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1001",
+                                                        "descricao": "JUROS",
+                                                        "tipo": "E",
+                                                        "valor": "329,94",
+                                                        "maximo_desconto": "100,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1002",
+                                                        "descricao": "MULTA",
+                                                        "tipo": "E",
+                                                        "valor": "1,92",
+                                                        "maximo_desconto": "100,00"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "cli_cod": "7522666",
+                                            "cli_emp": "1",
+                                            "con_cod": "238999",
+                                            "con_fil": "0",
+                                            "con_fra": "13757",
+                                            "par_cod": "130061652",
+                                            "par_num": "1",
+                                            "par_ven": "10/09/2021",
+                                            "par_obr": "1",
+                                            "par_sel": "0",
+                                            "par_val": "82,10",
+                                            "par_sit": "Acordo",
+                                            "par_sta": "AC",
+                                            "par_datret": "2026-02-14",
+                                            "par_acocod": "10046171",
+                                            "lancamentos": {
+                                                "item": [
+                                                    {
+                                                        "codigo": "1",
+                                                        "descricao": "PRINCIPAL",
+                                                        "tipo": "C",
+                                                        "valor": "82,10",
+                                                        "maximo_desconto": "85,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1001",
+                                                        "descricao": "JUROS",
+                                                        "tipo": "E",
+                                                        "valor": "281,03",
+                                                        "maximo_desconto": "100,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1002",
+                                                        "descricao": "MULTA",
+                                                        "tipo": "E",
+                                                        "valor": "1,64",
+                                                        "maximo_desconto": "100,00"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                "regras_acordo": {
+                                    "regra_acordo": {
+                                        "aco_regcod": "7253",
+                                        "aco_regsel": "S",
+                                        "aco_regnom": "ACORDO - BW - FEIRÃO | 2X A 4X",
+                                        "aco_exient": "N",
+                                        "aco_minnumpar": "2",
+                                        "aco_maxnumpar": "4",
+                                        "aco_datentsug": "25/10/2024",
+                                        "aco_datentmin": "25/10/2024",
+                                        "aco_datentmax": "04/11/2024",
+                                        "aco_diamaxpriven": "30",
+                                        "aco_valentsug": "0,00",
+                                        "aco_valentmin": "0,00",
+                                        "aco_perentmin": "0,00",
+                                        "aco_valparmin": "50,00",
+                                        "aco_perjur": "0,00",
+                                        "aco_valjur": "0,00"
+                                    }
+                                }
+                            },
+                            {
+                                "for_cod": "431",
+                                "for_nom": "BW - FEIRÃO | 5X A 12X",
+                                "parcelas": {
+                                    "parcela": [
+                                        {
+                                            "cli_cod": "7522666",
+                                            "cli_emp": "1",
+                                            "con_cod": "238761",
+                                            "con_fil": "0",
+                                            "con_fra": "13757",
+                                            "par_cod": "129907813",
+                                            "par_num": "1",
+                                            "par_ven": "08/09/2021",
+                                            "par_obr": "1",
+                                            "par_sel": "1",
+                                            "par_val": "96,22",
+                                            "par_sit": "Aberto",
+                                            "par_sta": "SM",
+                                            "par_datret": "2026-02-14",
+                                            "par_acocod": "0",
+                                            "lancamentos": {
+                                                "item": [
+                                                    {
+                                                        "codigo": "1",
+                                                        "descricao": "PRINCIPAL",
+                                                        "tipo": "C",
+                                                        "valor": "96,22",
+                                                        "maximo_desconto": "55,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1001",
+                                                        "descricao": "JUROS",
+                                                        "tipo": "E",
+                                                        "valor": "329,94",
+                                                        "maximo_desconto": "100,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1002",
+                                                        "descricao": "MULTA",
+                                                        "tipo": "E",
+                                                        "valor": "1,92",
+                                                        "maximo_desconto": "100,00"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "cli_cod": "7522666",
+                                            "cli_emp": "1",
+                                            "con_cod": "238999",
+                                            "con_fil": "0",
+                                            "con_fra": "13757",
+                                            "par_cod": "130061652",
+                                            "par_num": "1",
+                                            "par_ven": "10/09/2021",
+                                            "par_obr": "1",
+                                            "par_sel": "0",
+                                            "par_val": "82,10",
+                                            "par_sit": "Acordo",
+                                            "par_sta": "AC",
+                                            "par_datret": "2026-02-14",
+                                            "par_acocod": "10046171",
+                                            "lancamentos": {
+                                                "item": [
+                                                    {
+                                                        "codigo": "1",
+                                                        "descricao": "PRINCIPAL",
+                                                        "tipo": "C",
+                                                        "valor": "82,10",
+                                                        "maximo_desconto": "55,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1001",
+                                                        "descricao": "JUROS",
+                                                        "tipo": "E",
+                                                        "valor": "281,03",
+                                                        "maximo_desconto": "100,00"
+                                                    },
+                                                    {
+                                                        "codigo": "1002",
+                                                        "descricao": "MULTA",
+                                                        "tipo": "E",
+                                                        "valor": "1,64",
+                                                        "maximo_desconto": "100,00"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                "regras_acordo": {
+                                    "regra_acordo": {
+                                        "aco_regcod": "7254",
+                                        "aco_regsel": "S",
+                                        "aco_regnom": "ACORDO - BW - FEIRÃO | 5X A 12X",
+                                        "aco_exient": "N",
+                                        "aco_minnumpar": "5",
+                                        "aco_maxnumpar": "12",
+                                        "aco_datentsug": "25/10/2024",
+                                        "aco_datentmin": "25/10/2024",
+                                        "aco_datentmax": "04/11/2024",
+                                        "aco_diamaxpriven": "30",
+                                        "aco_valentsug": "0,00",
+                                        "aco_valentmin": "0,00",
+                                        "aco_perentmin": "0,00",
+                                        "aco_valparmin": "50,00",
+                                        "aco_perjur": "0,00",
+                                        "aco_valjur": "0,00"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}
