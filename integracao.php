@@ -10,13 +10,14 @@ function processarDadosPagamento($jsonApi) {
 
     foreach ($jsonApi['dividas_calculadas']['produtos']['produto'] as $produto) {
         $nomeProduto = $produto['pro_nom'];
-        $totalDivida = 0;
         $totalComDesconto = 0;
         $quantidadeTitulos = 0;
         $parcelamentoOpcoes = [];
+        $valoresParcela = [];
 
         foreach ($produto['formasNegociacao']['forma_negociacao'] as $formaNegociacao) {
             $parcelaValores = 0;
+            $totalDivida = 0;
             $parcelas = $formaNegociacao['parcelas']['parcela'];
             $quantidadeTitulos += count($parcelas);
             $maxNumParcela = $formaNegociacao['regras_acordo']['regra_acordo']['aco_maxnumpar'];
@@ -44,12 +45,19 @@ function processarDadosPagamento($jsonApi) {
             $parcelamentoOpcoes[] = [
                 'nome' => $formaNegociacao['for_nom'],
                 'quantidade_parcelas' => "$numeroParcelas",
-                'valor_parcela' => "R$ $parcelaValores"
+                'valor_parcelas' => "R$ $totalDivida"
             ];
+
+            while($minNumParcela <= $maxNumParcela){
+                $valoresParcela[sprintf("$minNumParcela"."X")] = sprintf("R$ %s", $totalDivida*$minNumParcela);
+                
+                $minNumParcela++;
+            }
+            
             $resultados['valor_total_parcela_desconto_aplicado'] += $parcelaValores;
         }
 
-        $resultados['valor_total_divida'][$nomeProduto] = "R$ $totalDivida";
+        $resultados['valor_total_divida'][$nomeProduto] = $valoresParcela;
         $resultados['valor_desconto'][$nomeProduto] = "R$ $totalComDesconto";
         $resultados['opcoes_parcelamento'][$nomeProduto] = $parcelamentoOpcoes;
         $resultados['quantidade_titulo'][$nomeProduto] = "$quantidadeTitulos títulos";

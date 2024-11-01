@@ -9,27 +9,30 @@ function processarDadosPagamento(jsonApi) {
 
     jsonApi.dividas_calculadas.produtos.produto.forEach(produto => {
         const nomeProduto = produto.pro_nom;
-        let totalDivida = 0;
         let totalComDesconto = 0;
         let quantidadeTitulos = 0;
         const parcelamentoOpcoes = [];
+        let valoresParcela = {};
 
         produto.formasNegociacao.forma_negociacao.forEach(formaNegociacao => {
             let parcelaValores = 0;
+            let totalDivida = 0;
             const parcelas = formaNegociacao.parcelas.parcela;
             quantidadeTitulos += parcelas.length;
+            let maxNumParcela = Number(formaNegociacao.regras_acordo.regra_acordo.aco_maxnumpar);
+            let minNumParcela = Number(formaNegociacao.regras_acordo.regra_acordo.aco_minnumpar);
 
             const numeroParcelas = 
-                formaNegociacao.regras_acordo.regra_acordo.aco_minnumpar === 1 &&
-                formaNegociacao.regras_acordo.regra_acordo.aco_maxnumpar === 1
+                minNumParcela === 1 &&
+                maxNumParcela === 1
                     ? "A VISTA"
-                    : formaNegociacao.regras_acordo.regra_acordo.aco_minnumpar+'X A '+formaNegociacao.regras_acordo.regra_acordo.aco_maxnumpar+'X';
+                    : minNumParcela+'X A '+maxNumParcela+'X';
 
             parcelas.forEach(parcela => {
                 parcela.lancamentos.item.forEach(item => {
                     if (item.descricao === "PRINCIPAL") {
-                        const valor = parseFloat(item.valor.replace(',', '.')).toFixed(2);
-                        const desconto = parseFloat(item.maximo_desconto).toFixed(2);
+                        const valor = parseFloat(item.valor.replace(',', '.'));
+                        const desconto = parseFloat(item.maximo_desconto);
                         const valorDescontado = (valor - (valor * desconto / 100)).toFixed(2);
 
                         totalDivida += parseFloat(valor);
@@ -42,18 +45,25 @@ function processarDadosPagamento(jsonApi) {
             parcelamentoOpcoes.push({
                 nome: formaNegociacao.for_nom,
                 quantidade_parcelas: numeroParcelas,
-                valor_parcela: 'R$ '+parcelaValores.toFixed(2)
+                valor_parcela: 'R$ '+totalDivida.toFixed(2)
             });
+            
+            while (minNumParcela <= maxNumParcela) {
+                const parcNom = minNumParcela + 'X';
+                valoresParcela[parcNom] = 'R$' + (totalDivida * minNumParcela).toFixed(2);
+                minNumParcela++;
+            }
+
             resultados.valor_total_parcela_desconto_aplicado += parcelaValores;
         });
 
-        resultados.valor_total_divida[nomeProduto] = 'R$ '+totalDivida.toFixed(2);
+        resultados.valor_total_divida[nomeProduto] = valoresParcela;
         resultados.valor_desconto[nomeProduto] = 'R$ '+totalComDesconto.toFixed(2);
         resultados.opcoes_parcelamento[nomeProduto] = parcelamentoOpcoes;
         resultados.quantidade_titulo[nomeProduto] = quantidadeTitulos+' títulos';
     });
 
-    resultados.valor_total_parcela_desconto_aplicado = `R$ ${resultados.valor_total_parcela_desconto_aplicado.toFixed(2)}`;
+    resultados.valor_total_parcela_desconto_aplicado = 'R$ '+resultados.valor_total_parcela_desconto_aplicado.toFixed(2);
 
     return resultados;
 }
