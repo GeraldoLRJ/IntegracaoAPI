@@ -1,38 +1,66 @@
 <?php
-    $json = file_get_contents('json_teste.json');
+function processarDadosPagamento($jsonApi) {
+    $resultados = [
+        'valor_total_parcela_desconto_aplicado' => 0,
+        'valor_total_divida' => [],
+        'valor_desconto' => [],
+        'opcoes_parcelamento' => [],
+        'quantidade_titulo' => []
+    ];
 
-    $arrayApi = json_decode($json, true);
-    $valorTotalParcela = [];//check
-    $valorTotalDivida = [];//load
-    $valorDesconto = [];
-    $opcoesParcelamento = [];
-    $quantidadeTitulo = [];
-    $produto = '';
-    $produtoNegociacao = '';
-    $parcela = '';
-    $valorItem = 0;
-    $count = 0;
-    $valorTotalParcela['total'] = 0;
-    $totalParcela = 0;
+    foreach ($jsonApi['dividas_calculadas']['produtos']['produto'] as $produto) {
+        $nomeProduto = $produto['pro_nom'];
+        $totalDivida = 0;
+        $totalComDesconto = 0;
+        $quantidadeTitulos = 0;
+        $parcelamentoOpcoes = [];
 
-    foreach($arrayApi['dividas_calculadas']['produtos']['produto'] as $produtos) {
-        $valorTotalParcela[$produtos['pro_nom']] = [];
-        $produto = $produtos['pro_nom'];
-        foreach($produtos['formasNegociacao']['forma_negociacao'] as $formaNegociacao) {
-            $valorTotalParcela[$produto][$formaNegociacao['for_nom']] = [];
-            $produtoNegociacao = $formaNegociacao['for_nom'];
-            foreach($formaNegociacao['parcelas']['parcela'] as $parcelas) {
-                foreach($parcelas['lancamentos']['item'] as $itemParcela) {
-                    if($itemParcela['descricao'] == "PRINCIPAL")
-                    $valorItem = number_format((int)$itemParcela['valor'], 2) - ((number_format((int)$itemParcela['valor'], 2) * number_format((int)$itemParcela['maximo_desconto'], 2))/100);
+        foreach ($produto['formasNegociacao']['forma_negociacao'] as $formaNegociacao) {
+            $parcelaValores = 0;
+            $parcelas = $formaNegociacao['parcelas']['parcela'];
+            $quantidadeTitulos += count($parcelas);
+            $maxNumParcela = $formaNegociacao['regras_acordo']['regra_acordo']['aco_maxnumpar'];
+            $minNumParcela = $formaNegociacao['regras_acordo']['regra_acordo']['aco_minnumpar'];
+            $numeroParcelas = 
+                $minNumParcela == 1 && 
+                $maxNumParcela == 1
+                ? "A VISTA"
+                : sprintf("%sX A %sX", $minNumParcela, $maxNumParcela);
+
+            foreach ($parcelas as $parcela) {
+                foreach ($parcela['lancamentos']['item'] as $item) {
+                    if($item['descricao'] == "PRINCIPAL"){
+                        $valor = number_format(floatval(str_replace(',', '.', $item['valor'])), 2);
+                        $desconto = number_format(floatval($item['maximo_desconto']), 2);
+                        $valorDescontado = number_format($valor - ($valor * $desconto / 100), 2);
+                        
+                        $totalDivida += $valor;
+                        $totalComDesconto += $valorDescontado;
+                        $parcelaValores += $valorDescontado;
+                    }
                 }
-                $valorTotalParcela[$produto][$produtoNegociacao]['divida'] += number_format($valorItem, 2);
             }
-            $totalParcela += $valorTotalParcela[$produto][$produtoNegociacao]['divida'];
-            
+
+            $parcelamentoOpcoes[] = [
+                'nome' => $formaNegociacao['for_nom'],
+                'quantidade_parcelas' => "$numeroParcelas",
+                'valor_parcela' => "R$ $parcelaValores"
+            ];
+            $resultados['valor_total_parcela_desconto_aplicado'] += $parcelaValores;
         }
+
+        $resultados['valor_total_divida'][$nomeProduto] = "R$ $totalDivida";
+        $resultados['valor_desconto'][$nomeProduto] = "R$ $totalComDesconto";
+        $resultados['opcoes_parcelamento'][$nomeProduto] = $parcelamentoOpcoes;
+        $resultados['quantidade_titulo'][$nomeProduto] = "$quantidadeTitulos títulos";
     }
-    $valorTotalDivida = $valorTotalParcela;
-    print_r("$totalParcela \n");
-    print_r($valorTotalDivida);
+
+    $resultados['valor_total_parcela_desconto_aplicado'] = "R$ {$resultados['valor_total_parcela_desconto_aplicado']}";
+
+    return $resultados;
+}
+
+$jsonApi = json_decode(file_get_contents('json_teste.json'), true);
+$resultado = processarDadosPagamento($jsonApi);
+print_r($resultado);
 ?>
